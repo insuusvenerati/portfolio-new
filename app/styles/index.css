@@ -1,0 +1,108 @@
+* {
+  color: white;
+}
+
+.minimal-link {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding-bottom: 0.1rem;
+}
+
+.minimal-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.1rem;
+  background-color: #fff;
+  opacity: 0.5;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.minimal-link:hover::after {
+  transform: scaleX(1);
+}
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 36px;
+  cursor: pointer;
+}
+
+.menu-btn svg {
+  color: #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close-btn:before,
+.close-btn:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 16px;
+  background-color: #333;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-btn:after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  @apply bg-slate-800;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu-toggle:checked ~ .menu {
+  transform: translateX(0);
+}
+
+.menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.menu ul li {
+  margin: 20px 0;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}

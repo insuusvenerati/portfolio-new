@@ -1,11 +1,13 @@
 # base node image
-FROM node:16-bullseye-slim as base
+FROM node:19-bullseye-slim as base
 
 # set for base and all layer that inherit from it
 ENV NODE_ENV production
 
 # Install openssl for Prisma
 RUN apt-get update && apt-get install -y openssl sqlite3
+ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-amd64-static.tar.gz /tmp/litestream.tar.gz
+RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 
 # Install all node_modules, including dev dependencies
 FROM base as deps
@@ -46,6 +48,7 @@ ENV NODE_ENV="production"
 
 # add shortcut for connecting to database CLI
 RUN echo "#!/bin/sh\nset -x\nsqlite3 \$DATABASE_URL" > /usr/local/bin/database-cli && chmod +x /usr/local/bin/database-cli
+ADD litestream.yml /etc/litestream.yml
 
 WORKDIR /myapp
 
@@ -58,4 +61,4 @@ COPY --from=build /myapp/package.json /myapp/package.json
 COPY --from=build /myapp/start.sh /myapp/start.sh
 COPY --from=build /myapp/prisma /myapp/prisma
 
-ENTRYPOINT [ "./start.sh" ]
+ENTRYPOINT ["sh", "start.sh"]

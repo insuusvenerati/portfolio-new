@@ -1,0 +1,94 @@
+[
+  {
+    "id": "root",
+    "path": "",
+    "file": "root.tsx",
+    "children": [
+      {
+        "id": "routes/resource.paths",
+        "path": "resource/paths",
+        "file": "routes/resource.paths.tsx"
+      },
+      {
+        "id": "routes/posts._index",
+        "index": true,
+        "path": "posts",
+        "file": "routes/posts._index.tsx"
+      },
+      {
+        "id": "routes/healthcheck",
+        "path": "healthcheck",
+        "file": "routes/healthcheck.tsx"
+      },
+      {
+        "id": "routes/posts.$slug",
+        "path": "posts/:slug",
+        "file": "routes/posts.$slug.tsx"
+      },
+      {
+        "id": "routes/posts.admin",
+        "path": "posts/admin",
+        "file": "routes/posts.admin.tsx",
+        "children": [
+          {
+            "id": "routes/posts.admin._index",
+            "index": true,
+            "file": "routes/posts.admin._index.tsx"
+          },
+          {
+            "id": "routes/posts.admin.new",
+            "path": "new",
+            "file": "routes/posts.admin.new.tsx"
+          }
+        ]
+      },
+      {
+        "id": "routes/_index",
+        "index": true,
+        "file": "routes/_index.tsx"
+      },
+      {
+        "id": "routes/logout",
+        "path": "logout",
+        "file": "routes/logout.tsx"
+      },
+      {
+        "id": "routes/login",
+        "path": "login",
+        "file": "routes/login.tsx"
+      },
+      {
+        "id": "routes/notes",
+        "path": "notes",
+        "file": "routes/notes.tsx",
+        "children": [
+          {
+            "id": "routes/notes.$noteId",
+            "path": ":noteId",
+            "file": "routes/notes.$noteId.tsx"
+          },
+          {
+            "id": "routes/notes._index",
+            "index": true,
+            "file": "routes/notes._index.tsx"
+          },
+          {
+            "id": "routes/notes.new",
+            "path": "new",
+            "file": "routes/notes.new.tsx"
+          }
+        ]
+      },
+      {
+        "id": "routes/blog",
+        "path": "blog",
+        "file": "routes/blog.tsx"
+      },
+      {
+        "id": "routes/join",
+        "path": "join",
+        "file": "routes/join.tsx"
+      }
+    ]
+  }
+]
