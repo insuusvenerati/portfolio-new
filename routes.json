@@ -43,6 +43,11 @@
         ]
       },
       {
+        "id": "routes/api.image",
+        "path": "api/image",
+        "file": "routes/api.image.tsx"
+      },
+      {
         "id": "routes/_index",
         "index": true,
         "file": "routes/_index.tsx"
