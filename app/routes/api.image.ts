@@ -3,7 +3,10 @@ import { sharpTransformer } from "remix-image-sharp";
 import { MemoryCache, imageLoader } from "remix-image/server";
 
 const config = {
-  selfUrl: "http://localhost:3000",
+  selfUrl:
+    process.env.NODE_ENV === "production"
+      ? "https://stiforr-portfolio.fly.dev"
+      : "http://localhost:3000",
   transformer: sharpTransformer,
   cache: new MemoryCache(),
 };

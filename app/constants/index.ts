@@ -1,5 +1,5 @@
 import type { NavLink, Technology } from "~/types";
-import remixLogo from "~/assets/images/800x800 - Dark.png";
+import remixLogo from "~/assets/images/remixLogo.png";
 
 export const pageMeta = {
   title: "Sean Norwood",

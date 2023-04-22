@@ -45,7 +45,7 @@
       {
         "id": "routes/api.image",
         "path": "api/image",
-        "file": "routes/api.image.tsx"
+        "file": "routes/api.image.ts"
       },
       {
         "id": "routes/_index",
