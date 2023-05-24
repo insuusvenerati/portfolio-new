@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import invariant from "tiny-invariant";
 import { deletePost } from "~/models/post.server";
 import { requireUser } from "~/session.server";
-import { useMatchesData } from "~/utils";
+import { useMatchesData } from "~/util/utils";
 
 export const loader = async ({ request }: LoaderArgs) => {
   return await requireUser(request);

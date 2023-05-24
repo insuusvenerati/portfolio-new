@@ -1,5 +1,5 @@
 import type { LinksFunction, LoaderArgs } from "@remix-run/node";
-import { defer } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -11,7 +11,6 @@ import {
 } from "@remix-run/react";
 import type { V2_ErrorBoundaryComponent } from "@remix-run/server-runtime/dist/routeModules";
 import { Layout } from "./components/Layout";
-import { getPosts } from "./models/post.server";
 import { getUser } from "./session.server";
 import styles from "./styles/index.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
@@ -35,11 +34,10 @@ export const links: LinksFunction = () => {
 };
 
 export async function loader({ request }: LoaderArgs) {
-  const [user, posts] = await Promise.all([getUser(request), getPosts()]);
+  const user = getUser(request);
 
-  return defer({
+  return json({
     user,
-    posts,
   });
 }
 

@@ -39,6 +39,7 @@ export const navLinks: NavLink[] = [
   // { name: "Sean Norwood", href: "/", position: "left" },
   { name: "Github", href: "https://github.com/insuusvenerati" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/sean-norwood/" },
+  { name: "Portfolio", href: "/portfolio" },
   { name: "Blog", href: "/blog" },
   { name: "About", href: "/about" },
 ];

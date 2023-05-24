@@ -5,6 +5,12 @@
     "file": "root.tsx",
     "children": [
       {
+        "id": "routes/portfolio._index",
+        "index": true,
+        "path": "portfolio",
+        "file": "routes/portfolio._index.tsx"
+      },
+      {
         "id": "routes/resource.paths",
         "path": "resource/paths",
         "file": "routes/resource.paths.tsx"
@@ -41,11 +47,6 @@
             "file": "routes/posts.admin.new.tsx"
           }
         ]
-      },
-      {
-        "id": "routes/api.image",
-        "path": "api/image",
-        "file": "routes/api.image.ts"
       },
       {
         "id": "routes/_index",
@@ -88,11 +89,6 @@
         "id": "routes/blog",
         "path": "blog",
         "file": "routes/blog.tsx"
-      },
-      {
-        "id": "routes/join",
-        "path": "join",
-        "file": "routes/join.tsx"
       }
     ]
   }

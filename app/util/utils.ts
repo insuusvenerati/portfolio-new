@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 import type { User } from "~/models/user.server";
-import type { Routes } from "./types";
+import type { Routes } from "../types";
 
 const DEFAULT_REDIRECT = "/";
 

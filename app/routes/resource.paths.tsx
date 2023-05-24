@@ -1,6 +1,6 @@
 import { json } from "@remix-run/server-runtime";
-import { extractPaths } from "~/utils";
 import routes from "../../routes.json";
+import { extractPaths } from "~/util/utils";
 
 export const loader = async () => {
   const paths = extractPaths(routes);

@@ -6,6 +6,7 @@ ENV NODE_ENV production
 
 # Install openssl for Prisma
 RUN apt-get update && apt-get install -y openssl sqlite3
+RUN corepack enable && corepack prepare pnpm@latest --activate
 ADD https://github.com/benbjohnson/litestream/releases/download/v0.3.9/litestream-v0.3.9-linux-amd64-static.tar.gz /tmp/litestream.tar.gz
 RUN tar -C /usr/local/bin -xzf /tmp/litestream.tar.gz
 

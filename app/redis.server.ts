@@ -1,5 +1,8 @@
-import Redis from "ioredis";
+import { redisCacheAdapter } from "cachified";
+import { createClient } from "redis";
 
-export const client = new Redis(process.env.REDIS_URL ?? "redis://[::1]:6379", {
-  family: 6,
+export const redis = createClient({
+  url: process.env.REDIS_URL || "redis://localhost:6379",
 });
+
+export const cache = redisCacheAdapter(redis);
