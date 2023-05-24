@@ -15,13 +15,11 @@ import { getPosts } from "./models/post.server";
 import { getUser } from "./session.server";
 import styles from "./styles/index.css";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
-import remixImageStyles from "remix-image/remix-image.css";
 
 export const links: LinksFunction = () => {
   return [
     { rel: "stylesheet", href: tailwindStylesheetUrl },
     { rel: "stylesheet", href: styles },
-    { rel: "stylesheet", href: remixImageStyles },
     { rel: "preconnect", href: "https://upload.wikimedia.org" },
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
     {
