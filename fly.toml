@@ -1,6 +1,6 @@
 # fly.toml file generated for stiforr-portfolio on 2023-03-27T14:53:11-05:00
 
-app = "stiforr-portfolio"
+app = "stiforr-portfolio-v2"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "iad"
