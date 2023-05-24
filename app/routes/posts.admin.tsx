@@ -1,12 +1,16 @@
 import type { Post } from "@prisma/client";
 import { Await, Link, Outlet, useFetcher } from "@remix-run/react";
-import type { ActionArgs } from "@remix-run/server-runtime";
+import type { ActionArgs, LoaderArgs } from "@remix-run/server-runtime";
 import { json } from "@remix-run/server-runtime";
 import { Suspense } from "react";
 import invariant from "tiny-invariant";
 import { deletePost } from "~/models/post.server";
 import { requireUser } from "~/session.server";
 import { useMatchesData } from "~/utils";
+
+export const loader = async ({ request }: LoaderArgs) => {
+  return await requireUser(request);
+};
 
 export const action = async ({ request }: ActionArgs) => {
   await requireUser(request);
